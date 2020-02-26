@@ -3,7 +3,6 @@ window.onload = function () {
     // setup variables
     let canvasWidth = 700;
     let canvasHeight = 500;
-    const btn = document.querySelector("#btn");
     const background = document.querySelector('#bg');
     const player = document.querySelector('#perso');
     const canvas = document.querySelector("#canvas");
@@ -77,9 +76,10 @@ window.onload = function () {
             }
 
             // gestion des collisions 
-            if (positionX + playerWidth >= obstacle[i].x && positionX <= obstacle[i].x + obstacleWidth && (positionY <= obstacle[i].y + obstacleHeight || positionY + playerHeight >= obstacle[i].y + constant) && positionY >= 0 || positionY >= canvasHeight - playerHeight) {
+            if (positionX + playerWidth >= obstacle[i].x && positionX <= obstacle[i].x + obstacleWidth && (positionY <= obstacle[i].y + obstacleHeight || positionY + playerHeight >= obstacle[i].y + constant) || positionY  <= 0 || positionY >= canvasHeight - playerHeight) { 
 
-                location.reload();
+
+                document.location.reload(true);
             }
 
             // gestion du score
