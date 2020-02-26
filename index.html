@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+    <title>DEAD BIRD</title>
+</head>
+<style>
+body, img, h1 {
+    padding: 0;
+    margin: 0;
+}
+#bg-body {
+    position: relative;
+    background-color: #241e1ae5;
+    height: 100vh;
+}
+canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+}
+h1 {
+    text-align: center;
+    /* padding-top: 6rem; */
+    font-size: 70px;
+    text-shadow: 10px 8px 2px rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    color: white;
+}
+</style>
+<body>
+    <div id="bg-body">
+        <h1>DEAD BIRD</h1>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div style="display: none;">
+        <img id="bg" src="images/bg.png">
+        <img id="perso" src="images/perso.png">
+        <img id="obstacle1" src="images/Obstacle-1.png">
+        <img id="obstacle2" src="images/Obstacle-2.png">
+        <img id="lava" src="images/lava.png">
+        <audio id="blaster" src="sons/blaster.mp3"></audio>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
