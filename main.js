@@ -1,15 +1,15 @@
 window.onload = function () {
 
     // setup variables
-    let canvasWidth = 700;
-    let canvasHeight = 500;
+    let canvasWidth = 600;
+    let canvasHeight = 400;
     const background = document.querySelector('#bg');
     const player = document.querySelector('#perso');
     const canvas = document.querySelector("#canvas");
     const obstacle1 = document.querySelector("#obstacle1");
     const obstacle2 = document.querySelector("#obstacle2");
     const blaster = document.querySelector("#blaster");
-    const gap = 70; // 70 = best value
+    const gap = 75; // 70 = best value
     const obstacleHeight = 242;
     const obstacleWidth = 52;
     let constant = obstacleHeight + gap;
@@ -50,7 +50,9 @@ window.onload = function () {
 
     tombe();
 
-
+    function reload() {
+        location.reload();
+    }
     function tombe() {
         
         // affichage du bg
@@ -78,12 +80,16 @@ window.onload = function () {
             // gestion des collisions 
             if (positionX + playerWidth >= obstacle[i].x && positionX <= obstacle[i].x + obstacleWidth && (positionY <= obstacle[i].y + obstacleHeight || positionY + playerHeight >= obstacle[i].y + constant) || positionY  <= 0 || positionY >= canvasHeight - playerHeight) { 
 
-
-                document.location.reload(true);
+            
+                const gameOver = document.querySelector('#game-over');
+                const btnReplay = document.querySelector('#btn');
+                space.drawImage(gameOver, 0, 0, canvasWidth, canvasHeight);
+                btnReplay.style.display = "block";
+                location.stop();
             }
 
             // gestion du score
-            if (obstacle[i].x == 10) {
+            if (obstacle[i].x == 15) {
                 score++;
             }
         }

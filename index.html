@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +9,54 @@
     <title>DEAD BIRD</title>
 </head>
 <style>
-body, img, h1 {
-    padding: 0;
-    margin: 0;
-}
-#bg-body {
-    position: relative;
-    background-color: #241e1ae5;
-    height: 100vh;
-}
-canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 20px;
-}
-h1 {
-    text-align: center;
-    /* padding-top: 6rem; */
-    font-size: 70px;
-    text-shadow: 10px 8px 2px rgb(0, 0, 0);
-    text-align: center;
-    font-family: 'Bangers', cursive;
-    color: white;
-}
+    body,
+    img,
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+
+    #bg-body {
+        position: relative;
+        background-color: #241e1ae5;
+        height: 100vh;
+    }
+
+    canvas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 70px;
+        text-shadow: 10px 8px 2px rgb(0, 0, 0);
+        text-align: center;
+        font-family: 'Bangers', cursive;
+        color: white;
+    }
+
+    button {
+        position: absolute;
+        text-transform: uppercase;
+        font-family: 'Bangers', cursive;
+        font-size: 45px;
+        color: rgb(255, 255, 255);
+        border: none;
+        background: none;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        cursor: pointer;
+        outline: none;
+    }
 </style>
+
 <body>
     <div id="bg-body">
         <h1>DEAD BIRD</h1>
@@ -45,9 +68,13 @@ h1 {
         <img id="perso" src="images/perso.png">
         <img id="obstacle1" src="images/Obstacle-1.png">
         <img id="obstacle2" src="images/Obstacle-2.png">
+        <img id="game-over" src="images/game-over.jpg">
         <audio id="blaster" src="sons/blaster.mp3"></audio>
     </div>
 
+    <button id="btn" onclick="reload()">Rejouer</button>
+    
+    <script>function reload() { location.reload(); }</script>
     <script src="main.js"></script>
 </body>
 </html>
